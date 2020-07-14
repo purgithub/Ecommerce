@@ -1,15 +1,16 @@
 
 const express=require("express");
-const dotenv=require('dotenv');
+const dotenv=require('dotenv');// to keep server runnig and confidential data environment..
 dotenv.config()
 const mongoose=require("mongoose");
-const userRoutes= require('./routes/user');
 const bodyParser=require('body-parser');
-const cookieParser=require('cookie-parser');
+const cookieParser=require('cookie-parser');//to signout and protect route.
 const morgan=require('morgan');
-const expressValidator=require("express-validator");
+const expressValidator=require("express-validator");//for validation 
 
-
+//import routes
+const authRoutes= require('./routes/auth');
+const userRoutes= require('./routes/user');
 
 const app=express();
 app.use(expressValidator());
@@ -21,7 +22,11 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 ///router
-app.use(userRoutes);
+app.use(authRoutes);
+app.use(userRoutes)
+
+
+
 
 const port= process.env.PORT || 8000 
 
