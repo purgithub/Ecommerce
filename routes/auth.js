@@ -10,7 +10,7 @@ router.post("/signin", signin);
 router.get("/signout", signout);
 
 
-router.get("/hello", requireSignin, (req, res) => {
+router.get("/hello", requireSignin,  (req, res) => {
     console.log("Hello there");
 })
 module.exports = router;
