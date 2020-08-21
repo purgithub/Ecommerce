@@ -40,4 +40,4 @@ exports.processPayment = (req,res) =>{
             res.json(result)
         }
     })
-}
+};

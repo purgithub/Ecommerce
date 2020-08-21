@@ -1,6 +1,6 @@
 const { Order, CartItem } = require("../models/order");
 const { errorHandler } = require("../helpers/dbErrorHandler");
-const order = require("../models/order");
+
 
 exports.orderById=(req, res, next, id) =>{
 
@@ -61,6 +61,4 @@ exports.updateOrderStatus=(req,res)=>{
             res.json(order)
         })
 
-        
-        
-};
+    };
